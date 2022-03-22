@@ -9,4 +9,8 @@ RUN pip install mkdocs-pdf-export-plugin
 
 EXPOSE 8000
 
-CMD ["mkdocs", "serve"]
+COPY init /app/init
+RUN chmod 755 /app/init
+
+ENTRYPOINT ["/app/init"]
+CMD ["serve"]
