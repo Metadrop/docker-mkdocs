@@ -1,11 +1,10 @@
-FROM python:3.8
+FROM python:3.11-alpine
 
-MAINTAINER Metadrop <hi@metadrop.net>
+LABEL maintainer="Metadrop <hi@metadrop.net>"
 
-ENV LAST_UPDATE 2022-03-01
+ENV LAST_UPDATE=2024-09-05
 
-RUN pip install mkdocs mkdocs-material
-RUN pip install mkdocs-pdf-export-plugin
+RUN pip install --no-cache-dir mkdocs mkdocs-material mkdocs-pdf-export-plugin
 
 EXPOSE 8000
 
